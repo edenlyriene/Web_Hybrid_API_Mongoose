@@ -1,0 +1,78 @@
+<h3 ng-if="!showMenu">{{message}}</h3>
+<div class="panel panel-default" ng-if="showMenu">
+    <div class="row panel-body">
+        <div class="col-md-126">
+            <img src="./img/umaru_2.jpg" class="img-circle pull-left newsfeed_propic"> 
+                
+            <div class="btn-group pull-right">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span class="caret"></span>
+                  <span class="sr-only">Toggle Dropdown</span>
+                </button>
+
+                <ul class="dropdown-menu">
+                  <li><a ui-sref="app.worldwide">Back</a></li>
+                  <li><a ui-sref="app.postedit({id: posts._id})">Edit post</a></li>
+                  <!--<li><a ng-click="deletePost(posts._id)">Delete post</a></li>-->
+                </ul>
+            </div>
+
+            <div class="newsfeed_user_date">
+                <p>{{posts.firstname}} {{posts.lastname}}</p>
+                <p>{{posts.time | date:'MM/dd/yyyy @ h:mma'}}</p>
+            </div>
+        </div>
+        <!--<div class="col-md-6 padding-top-mod">
+            <audio controls>
+              <source src="./music/test.mp3" type="audio/mpeg" />
+              <a href="http://www.w3schools.com/html/horse.mp3">horse</a>
+            </audio>
+          </div>-->
+
+    <div class="clearfix"></div>
+    <div  class="post_text">
+      <p>{{posts.text}}</p>
+      <!--<p>{{posts._id}}</p>-->
+    </div>
+
+    <!--<div class="post_picture row">
+        <div class="post_picture_pic col-md-6">
+            <img src="./img/umaru_2.jpg" class="img-responsive img-thumbnail">
+        </div>
+        <div class="post_picture_des col-md-6 text-center">
+            <p class="col-centered post_picture_des_mod">This is Umaru-chan!</p>
+        </div>
+    </div>-->
+
+
+    <hr>
+    <!--<p>
+        <span>{{ posts.like.length }} Likes</span>  
+        <span class="pull-right pull-right-mod">{{ posts.comment.length }} Comments</span>  
+    </p>
+    
+    <div class="post_text">
+            <ul class="list-unstyled">
+                <li ng-repeat="comment in post.comment | orderBy:'-time'">
+                    <blockquote>
+                        <p>{{comment.comment}}</p>
+                        <footer>{{comment.postedBy.firstname}} {{comment.postedBy.lastname}}, {{comment.time | date:'MM/dd/yyyy @ h:mma'}}</footer>
+                    </blockquote>
+                </li>
+            </ul>
+    </div>
+
+    <p>
+        <p>{{mycomment.comment}}</p>
+    </p>
+    <form role="form" ng-submit="doComment()" name="commentForm">
+        <div class="input-group">
+            <div class="input-group-btn">
+            <button class="btn btn-default" ng-click="likePost(post.username)"><i class="fa fa-thumbs-up" aria-hidden="true"></i></button>
+            <button class="btn btn-default" type="submit" ng-disabled="mycomment.$invalid"><i class="fa fa-share"></i></button>
+            </div>
+            <input type="text" class="form-control" placeholder="Add a comment.." ng-model="mycomment.comment">
+        </div>
+    </form>-->
+  </div>
+</div>

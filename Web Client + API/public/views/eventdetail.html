@@ -1,0 +1,16 @@
+<h3 ng-if="!showMenu">{{message}}</h3>
+<div class="panel panel-default" ng-repeat="post in posts | orderBy:'-time'" ng-if="showMenu">
+    <div class="panel-body">
+      <img src="./img/umaru_2.jpg" class="img-circle pull-left newsfeed_propic"> 
+      <div class="newsfeed_user_date">
+          <p>{{events.postedBy.firstname}} {{events.postedBy.lastname}}</p>
+          <p>{{events.time}}</p>
+      </div>
+
+      <div class="clearfix"></div>
+      <div class="post_text">
+        <p>Title : {{events.title}} | Location : {{events.title}}</p>
+        <p>{{events.description}}</p>
+      </div>
+    </div>
+</div>

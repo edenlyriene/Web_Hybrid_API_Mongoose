@@ -1,0 +1,85 @@
+    <ul class="nav">
+        <li><a href="#" data-toggle="offcanvas" class="visible-xs text-center"><i class="glyphicon glyphicon-chevron-right"></i></a></li>
+    </ul>
+
+    <ul class="nav hidden-xs" id="lg-menu">
+        <!-- Welcome page -->
+        <li ng-class="{active: stateis('app')}" ng-hide="user.status">
+            <a ui-sref="app"><span class="fa fa-asterisk" aria-hidden="true"></span> Welcome</a>
+        </li>
+        <li ng-class="{active: stateis('app.login')}" ng-hide="user.status">
+            <a ui-sref="app.login"><span class="fa fa-sign-in" aria-hidden="true"></span> Login</a>
+        </li>
+        <li ng-class="{active: stateis('app.create')}" ng-hide="user.status">
+            <a ui-sref="app.create"><span class="fa fa-plus-square" aria-hidden="true"></span> Register</a>
+        </li>
+
+        <!-- Main page -->
+        <li ng-class="{active: stateis('app.worldwide')}" ng-show="user.status">
+            <a ui-sref="app.worldwide"><span class="fa fa-globe" aria-hidden="true"></span> Worldwide</a>
+        </li>
+        <!--<li ng-class="{active: stateis('app.community')}" ng-show="user.status">
+            <a ui-sref="app.community"><span class="fa fa-comments" aria-hidden="true"></span> Community</a>
+        </li>
+        <li ng-class="{active: stateis('app.event')}" ng-show="user.status">
+            <a ui-sref="app.event"><span class="fa fa-flag" aria-hidden="true"></span> Event</a>
+        </li>-->
+        <!--<li ng-class="{active: stateis('app.friendlist')}" ng-show="user.status">
+            <a ui-sref="app.friendlist"><span class="fa fa-star-o" aria-hidden="true"></span> Friend list</a>
+        </li>-->
+        <li ng-class="{active: stateis('app.account')}" ng-show="user.status">
+            <a ui-sref="app.account"><span class="fa fa-users" aria-hidden="true"></span> Account</a>
+        </li>
+
+        <!-- Feedback -->
+        <li ng-class="{active: stateis('app.feedback')}" >
+            <a ui-sref="app.feedback"><span class="fa fa-comment-o" aria-hidden="true"></span> Feedback</a>
+        </li>
+
+        <!-- Logout -->
+        <li ng-click="logout()" ng-show="user.status">
+            <a role="button"><span class="fa fa-sign-out" aria-hidden="true"></span> Logout</a>
+        </li>
+    </ul>
+    <ul class="list-unstyled hidden-xs" id="sidebar-footer">
+        <li>
+          <a  ui-sref="app.mainReg"><span aria-hidden="true"><h3>Speak Out</h3> <i class="glyphicon glyphicon-heart-empty"></i> Powered by IBM Bluemix</a>
+        </li>
+    </ul>
+
+    <!-- tiny only nav-->
+  <ul class="nav visible-xs" id="xs-menu">
+        <!-- Welcome page -->
+        <li ng-class="{active: stateis('app')}" ng-hide="user.status">
+            <a ui-sref="app" class="text-center"><i class="fa fa-asterisk" aria-hidden="true"></i></a>
+        </li>
+        <li ng-class="{active: stateis('app.login')}" ng-hide="user.status">
+            <a ui-sref="app.login" class="text-center"><i class="fa fa-sign-in" aria-hidden="true"></i></a>
+        </li>
+        <li ng-class="{active: stateis('app.create')}" ng-hide="user.status">
+            <a ui-sref="app.create" class="text-center"><i class="fa fa-plus-square" aria-hidden="true"></i></a>
+        </li>
+
+        <!-- Main page -->
+        <li ng-class="{active: stateis('app.worldwide')}" ng-show="user.status">
+            <a ui-sref="app.worldwide" class="text-center"><i class="fa fa-globe" aria-hidden="true"></i></a>
+        </li>
+        <!--<li ng-class="{active: stateis('app.community')}" ng-show="user.status">
+            <a ui-sref="app.community" class="text-center"><i class="fa fa-comments" aria-hidden="true"></i></a>
+        </li>
+        <li ng-class="{active: stateis('app.event')}" ng-show="user.status">
+            <a ui-sref="app.event" class="text-center"><i class="fa fa-flag" aria-hidden="true"></i></a>
+        </li>
+        <li ng-class="{active: stateis('app.friendlist')}" ng-show="user.status">
+            <a ui-sref="app.friendlist" class="text-center"><i class="fa fa-star-o" aria-hidden="true"></i></a>
+        </li>-->
+        <li ng-class="{active: stateis('app.account')}" ng-show="user.status">
+            <a ui-sref="app.account" class="text-center"><i class="fa fa-users" aria-hidden="true"></i></a>
+        </li>
+        <li ng-class="{active: stateis('app.feedback')}" ng-show="user.status">
+            <a ui-sref="app.feedback" class="text-center"><i class="fa fa-sign-out" aria-hidden="true"></i></a>
+        </li>
+        <li ng-click="logout()" ng-show="user.status" ng-show="user.status">
+            <a class="text-center"><i class="fa fa-sign-out" aria-hidden="true"></i></a>
+        </li>
+    </ul>

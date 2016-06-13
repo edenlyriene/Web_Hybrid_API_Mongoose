@@ -1,0 +1,37 @@
+<div class="row">
+
+ <!-- main col left --> 
+ <div class="col-sm-5">
+     <h3>Speak Out's user</h1>
+      <div class="panel panel-default">
+        <div class="panel-thumbnail"><img src="./img/logo.png" class="img-responsive"></div>
+        <div class="panel-body">
+          <p class="lead">{{accountData.firstName}} {{accountData.lastName}}</p>
+          <p>{{ accountData.friends.length }} Friends, 13 Posts</p>
+
+          <p>
+            <img src="./img/umaru.jpg" width="28px" height="28px">
+            <span><i>{{accountData.status}}</i></span>
+          </p>
+        </div>
+      </div>
+  </div>
+
+  <!-- main col right -->
+  <div class="col-sm-7">
+      <div class="col-md-12 scrollbarFriendList">
+        <div class="col-md-3" ng-repeat="friend in friends">
+            <div class="panel panel-default">
+                <div class="panel-thumbnail"><img src="./img/logo.png" class="img-responsive"></div>
+                <div class="panel-body">
+                    <p class="lead">{{friend.firstName}} {{friend.lastName}}</p>
+                    <p>
+                        <span><i>{{friend.status}}</i></span>
+                    </p>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

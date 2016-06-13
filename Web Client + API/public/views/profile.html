@@ -1,0 +1,103 @@
+<div class="row">
+
+ <!-- main col left --> 
+ <div class="col-sm-5">
+
+      <div class="panel panel-default">
+        <div class="panel-thumbnail"><img src="./img/logo.png" class="img-responsive"></div>
+        <div class="panel-body">
+          <p class="lead">{{accountData.name}} {{accountData.lastname}}</p>
+          <!--<p>{{ accountData.friend.length }} Friends, 13 Posts</p>-->
+
+          <p>
+            <img src="./img/umaru.jpg" width="28px" height="28px">
+            <span><i>{{accountData.status}}</i></span>
+          </p>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading"><h4>Biodata</h4></div>
+            <div class="panel-body">
+                <p><b>Gender</b> : <i>{{accountData.gender}}</i></p>
+                <p><b>Status</b> : <i>{{accountData.status}}</i></p>
+                <p><b>E-mail</b> : <i>{{accountData.email}}</i></p>
+                <p><b>Contact</b> : <i>{{accountData.contact}}</i></p>
+                <p><b>Facebook</b> : <i>{{accountData.facebook}}</i></p>
+                <p><b>Twitter</b> : <i>{{accountData.twitter}}</i></p>
+            </div>
+      </div>
+  </div>
+
+  <!-- main col right -->
+  <div class="col-sm-7">
+
+        <div class="well"> 
+           <form class="form-horizontal" role="form" ng-submit="doPosting()">
+            <h4>What's New</h4>
+             <div class="form-group" style="padding:14px;">
+              <textarea class="form-control" placeholder="Update your status"  ng-model="postData.text"></textarea>
+            </div>
+            <button class="btn btn-primary pull-right" type="button" ng-click="doPosting()">Post</button>
+            <ul class="list-inline">
+                <!--<li><a href=""><i class="fa fa-microphone"></i></a></li>
+                <li><a href=""><i class="fa fa fa-camera"></i></a></li>
+                <li><a href=""><i class="fa fa-user-plus"></i></a></li>-->
+                <li><a href=""><i class="fa fa-map-marker"></i></a> Posted as : {{accountData.username}}</li>
+                <!--<li><a href=""><i class="fa fa-share"></i></a></li>-->
+            </ul>
+          </form>
+      </div>
+      <h3 ng-if="!showMenu">{{message}}</h3>
+       <div class="panel panel-default" ng-repeat="post in posts | orderBy:'-time' | filter: postData.username" ng-if="showMenu">
+          <div class="panel-body">
+            <img src="./img/umaru_2.jpg" class="img-circle pull-left newsfeed_propic"> 
+                
+            <div class="btn-group pull-right">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span class="caret"></span>
+                  <span class="sr-only">Toggle Dropdown</span>
+                </button>
+
+                <ul class="dropdown-menu">
+                  <li><a ui-sref="app.post({id: post._id})">Go to post</a></li>
+                  <li><a ui-sref="app.postedit({id: post._id})">Edit post</a></li>
+                  <!--<li><a ng-click="deletePost(post._id)">Delete post</a></li>-->
+                </ul>
+            </div>
+
+            <div class="newsfeed_user_date">
+                <p class="p_mod">{{post.firstname}} {{post.lastName}}</p>
+                <p>{{post.time | date:'MM/dd/yyyy @ h:mma'}}</p>
+            </div>
+              
+            <div class="clearfix"></div>
+            <div class="post_text">
+              <p>{{post.text}}</p>
+            <!--<p>{{post._id}}</p>-->
+            </div>
+              
+            <hr>
+            <!--<p>
+                <span>{{ post.like.length }} Likes</span>  
+                <span class="pull-right pull-right-mod">50 Comments</span>  
+            </p>
+            <form>
+                <div class="input-group">
+                  <div class="input-group-btn">
+                    <button class="btn btn-default"><i class="fa fa-thumbs-up" aria-hidden="true"></i></button>
+                    <button class="btn btn-default"><i class="fa fa-share"></i></button>
+                  </div>
+                  <input type="text" class="form-control" placeholder="Add a comment..">
+                </div>
+            </form>-->
+          </div>
+       </div>
+
+  </div>
+</div>
+<div class="row padding-bottom-mod">
+    <div class="col-sm-12">
+        <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="loadMore()">Load more . . .</button>
+     </div>
+</div>

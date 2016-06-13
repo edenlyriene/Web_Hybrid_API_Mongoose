@@ -1,0 +1,50 @@
+<!--account.html-->
+<div class="row">
+    <div class="col-md-12">
+        <div class="page-header">
+            <h2>Edit Your Post</h2>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <h5 ng-if="!showMenu">{{message}}</h5>
+        <form class="form-horizontal" novalidate ng-submit="updatePost()" name="editPostForm">
+            <fieldset>
+                <div class="form-group">
+                    <label for="username" class="col-lg-4 control-label">Username</label>
+                    <div class="col-lg-8">
+                        <input type="text"
+                               class="form-control"
+                               id="username"
+                               name="username"
+                               ng-model="formData.username"
+                               disabled>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="name"  class="col-lg-4 control-label">Text</label>
+                    <div class="col-lg-8" ng-class="{ 'has-error' : editPostForm.text.$error.required && !editPostForm.text.$pristine}">
+                        <textarea type="text"
+                               class="form-control"
+                               id="text"
+                               name="text"
+                               ng-model="formData.text"
+                               required placeholder="Edit your text"></textarea>
+                        <span ng-show="editPostForm.name.$error.required && !editPostForm.name.$pristine" class="help-block">Your Text is required.</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-lg-9 col-lg-offset-3">
+                        <input class="btn btn-primary" type="submit" ng-disabled="editPostForm.$invalid" value="Update Post">
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>
+<!--/account.html-->
