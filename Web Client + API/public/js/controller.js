@@ -376,11 +376,13 @@ angular.module('MEANapp')
     $scope.message = "Loading ...";
     $scope.accountData = $.extend(true,{},$localStorage.user);
 
+    $scope.userId = $stateParams.id;
+    console.log($stateParams.id);
+
     var limit = 5;
     $scope.load = limit;
     $scope.loadMore = function(){
         $scope.load = limit + 5;
-        //$state.go($state.current, {}, {reload: true}); 
     };
 
     $scope.postData = {
@@ -397,6 +399,7 @@ angular.module('MEANapp')
         .success(function (response) {
             $scope.posts = response;
             $scope.showMenu = true;
+            console.log($stateParams.id);
         })
         .error(function (response) {
             $scope.message = "Error: " + response.status + " " + response.statusText;
