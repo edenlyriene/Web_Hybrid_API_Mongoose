@@ -1,0 +1,177 @@
+<!--account.html-->
+<div class="row">
+    <div class="col-md-12">
+        <div class="page-header">
+            <h2>Your Account</h2>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <h5></h5>
+        <form class="form-horizontal" novalidate ng-submit="updateAccount()" name="editAccountForm">
+            <fieldset>
+                <div class="form-group">
+                    <label for="username" class="col-lg-4 control-label">Username</label>
+                    <div class="col-lg-8">
+                        <input type="text"
+                               class="form-control"
+                               id="username"
+                               name="username"
+                               ng-model="formData.username"
+                               disabled>
+                    </div>
+                </div>
+
+                <div class="form-group" ng-class="{ 'has-error' : editAccountForm.inputEmail.$error.required && !editAccountForm.inputEmail.$pristine || editAccountForm.inputEmail.$error.email}">
+                    <label for="inputEmail" class="col-lg-4 control-label">Email</label>
+                    <div class="col-lg-8">
+                        <input type="email"
+                               class="form-control"
+                               id="inputEmail"
+                               name="inputEmail"
+                               ng-model="formData.email"
+                               required placeholder="Email">
+                        <span ng-show="editAccountForm.inputEmail.$error.required && !editAccountForm.inputEmail.$pristine" class="help-block">Your E-mail is required.</span>
+                        <span ng-show="editAccountForm.inputEmail.$error.email" class="help-block">Your E-mail is invalid.</span>
+                    </div>
+                </div>
+                
+                <div class="form-group" ng-class="{ 'has-error' : editAccountForm.inputPassword.$error.required && !editAccountForm.inputPassword.$pristine || editAccountForm.inputPassword.$error.minlength || editAccountForm.inputPassword.$error.maxlength || editAccountForm.inputPassword.$error.pattern}">
+                    <label for="inputPassword" class="col-lg-4 control-label">Password</label>
+                    <div class="col-lg-8">
+                        <input type="password"
+                               class="form-control"
+                               id="inputPassword"
+                               name="inputPassword"
+                               ng-model="formData.password"
+                               required
+                               placeholder="Password">
+                    <span ng-show="editAccountForm.inputPassword.$error.required && !editAccountForm.inputPassword.$pristine" class="help-block">Password is required.</span>
+                    </div>
+                </div>
+
+                <div class="form-group" ng-class="{ 'has-error' : editAccountForm.confirmPassword.$error.required && !editAccountForm.confirmPassword.$pristine || editAccountForm.confirmPassword.$error.noMatch}">
+                    <label for="confirmPassword" class="col-lg-4 control-label">Confirm Password</label>
+                    <div class="col-lg-8">
+                        <input type="password"
+                               class="form-control"
+                               id="confirmPassword"
+                               name="confirmPassword"
+                               ng-model="formData.confirmPassword"
+                               required
+                               placeholder="Password"
+                               compare-to="formData.password">
+                        <span ng-show="editAccountForm.confirmPassword.$error.required && !editAccountForm.confirmPassword.$pristine" class="help-block">Confirmation password is required.</span>
+                        <span ng-show="editAccountForm.confirmPassword.$error.noMatch" class="help-block">Password doesn't match.</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="name"  class="col-lg-4 control-label">Name</label>
+                    <div class="col-lg-4" ng-class="{ 'has-error' : editAccountForm.name.$error.required && !editAccountForm.name.$pristine}">
+                        <input type="text"
+                               class="form-control"
+                               id="name"
+                               name="name"
+                               ng-model="formData.name"
+                               required placeholder="First Name">
+                        <span ng-show="editAccountForm.name.$error.required && !editAccountForm.name.$pristine" class="help-block">Your first name is required.</span>
+                    </div>
+                    <div class="col-lg-4" ng-class="{ 'has-error' : editAccountForm.lastname.$error.required && !editAccountForm.lastname.$pristine}">
+                        <input type="text"
+                               class="form-control"
+                               id="lastname"
+                               name="lastname"
+                               ng-model="formData.lastname"
+                               required placeholder="Last Name">
+                        <span ng-show="editAccountForm.lastname.$error.required && !editAccountForm.lastname.$pristine" class="help-block">Your last name is required.</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="gender" class="col-lg-4 control-label">Gender</label>
+                    <div class="col-md-8">
+                        <div class="form-group row">
+                            <label class="sr-only" for="gender">Gender</label>
+                            <div class="col-md-6" style="padding-right: 5px">
+                                <label class="radio-inline" style="float:left">
+                                <input type="radio" 
+                                       name="inlineRadioOptions" 
+                                       id="inlineRadio1" 
+                                       value="Male" 
+                                       ng-model="formData.gender">Male
+                                </label>
+                                <label class="radio-inline" style="float:left">
+                                <input type="radio" 
+                                       name="inlineRadioOptions" 
+                                       id="inlineRadio2" 
+                                       ng-model="formData.gender"
+                                       value="Female">Female
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="facebook"  class="col-lg-4 control-label">Facebook</label>
+                    <div class="col-lg-8">
+                        <input type="text"
+                               class="form-control"
+                               id="facebook"
+                               name="facebook"
+                               ng-model="formData.facebook"
+                               required placeholder="Facebook">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="twitter"  class="col-lg-4 control-label">Twitter</label>
+                    <div class="col-lg-8">
+                        <input type="text"
+                               class="form-control"
+                               id="twitter"
+                               name="twitter"
+                               ng-model="formData.twitter"
+                               required placeholder="Twitter">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="contact"  class="col-lg-4 control-label">Contact</label>
+                    <div class="col-lg-8">
+                        <input type="text"
+                               class="form-control"
+                               id="contact"
+                               name="contact"
+                               ng-model="formData.contact"
+                               required placeholder="contact">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="status"  class="col-lg-4 control-label">Status</label>
+                    <div class="col-lg-8">
+                        <input type="text"
+                               class="form-control"
+                               id="status"
+                               name="status"
+                               ng-model="formData.status"
+                               required placeholder="status">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-9 col-lg-offset-3">
+                        <input class="btn btn-primary" type="submit" ng-disabled="editAccountForm.$invalid" value="Update Account">
+                        <br/><br/>
+                        <button class="btn btn-danger" type="button" ng-click="deleteAccount()">Delete Account</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>
+<!--/account.html-->

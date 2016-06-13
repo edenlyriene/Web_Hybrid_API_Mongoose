@@ -1,0 +1,21 @@
+<ion-modal-view>
+  <ion-header-bar>
+    <h1 class="title">Your Feedback</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="closePosting()">Close</button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+    <form ng-submit="sendPost()">
+      <div class="list">
+        <label class="item item-input">
+          <span class="input-label">What's new</span>
+            <textarea type="text" ng-model="postData.text"></textarea>
+        </label>
+        <label class="item">
+          <button class="button button-block button-positive" type="submit">Post</button>
+        </label>
+      </div>
+    </form>
+  </ion-content>
+</ion-modal-view>

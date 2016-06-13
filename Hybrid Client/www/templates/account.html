@@ -1,0 +1,74 @@
+<ion-view view-title="Your Account">
+  <ion-content>
+    <ion-list ng-if="!showMenu">
+        <p>{{message}}</p>
+    </ion-list>
+    <ion-list>
+          <ion-item class="item-thumbnail-left" ng-if="showMenu">
+              
+            <form ng-submit="updateAccount()">
+              <div class="list">
+                <label class="item item-input item-stacked-label">
+                  <span class="input-label">Username</span>
+                  <input type="text" ng-model="formData.username">
+                </label>
+
+                <label class="item item-input item-stacked-label">
+                  <span class="input-label">Email</span>
+                  <input type="email" ng-model="formData.email">
+                </label>
+
+                <label class="item item-input item-stacked-label">
+                  <span class="input-label">Password</span>
+                  <input type="password" ng-model="formData.password">
+                </label>
+
+                <label class="item item-input item-stacked-label">
+                  <span class="input-label">First Name</span>
+                  <input type="text" ng-model="formData.name">
+                </label>
+                  
+                 <label class="item item-input item-stacked-label">
+                  <span class="input-label">Last Name</span>
+                  <input type="text" ng-model="formData.lastname">
+                </label>
+
+                 <label class="item item-input item-select">
+                    <div class="input-label">
+                      Gender
+                    </div>
+                    <select>
+                      <option ng-model="formData.gender" value="Male" selected>Male</option>
+                      <option ng-model="formData.gender" value="Female">Female</option>
+                    </select>
+                  </label>
+                 <label class="item item-input item-stacked-label">
+                  <span class="input-label">Facebook</span>
+                  <input type="text" ng-model="formData.facebook">
+                </label>
+                 <label class="item item-input item-stacked-label">
+                  <span class="input-label">Twitter</span>
+                  <input type="text" ng-model="formData.twitter">
+                </label>
+                 <label class="item item-input item-stacked-label">
+                  <span class="input-label">Contact</span>
+                  <input type="text" ng-model="formData.contact">
+                </label>
+                 <label class="item item-input item-stacked-label">
+                  <span class="input-label">Status</span>
+                  <input type="text" ng-model="formData.status">
+                </label>
+
+                <label class="item">
+                  <button class="button button-block button-positive" type="submit">Update Account</button>
+                    <br/><br/>
+                    <button class="btn btn-danger" type="button" ng-click="deleteAccount()">Delete Account</button>
+                </label>
+              </div>
+            </form>
+
+          </ion-item>
+              
+    </ion-list>
+  </ion-content>
+</ion-view>

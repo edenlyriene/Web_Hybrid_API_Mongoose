@@ -1,0 +1,29 @@
+<ion-view view-title="Edit Post">
+  <ion-content>
+    <ion-list ng-if="!showMenu">
+        <p>{{message}}</p>
+    </ion-list>
+    <ion-list>
+          <ion-item class="item-thumbnail-left" ng-if="showMenu">
+              
+            <form ng-submit="updatePost()">
+              <div class="list">
+                <label class="item item-input">
+                  <span class="input-label">Username</span>
+                  <input type="text" ng-model="formData.username">
+                </label>
+                <label class="item item-input">
+                  <span class="input-label">Text</span>
+                    <textarea type="text" ng-model="formData.text"></textarea>
+                </label>
+                <label class="item">
+                  <button class="button button-block button-positive" type="submit">Send Feedback</button>
+                </label>
+              </div>
+            </form>
+
+          </ion-item>
+              
+    </ion-list>
+  </ion-content>
+</ion-view>

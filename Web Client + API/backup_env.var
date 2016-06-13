@@ -1,0 +1,17 @@
+"mongodb-2.4": [
+      {
+         "name": "mean-mongo",
+         "label": "mongodb-2.4",
+         "plan": "100",
+         "credentials": {
+            "hostname": "23.246.199.78",
+            "host": "23.246.199.78",
+            "port": 10026,
+            "username": "ee0447fe-4ea9-4f00-9358-8d81a570490d",
+            "password": "ac58b099-bf51-466e-afcc-e5b570ec2066",
+            "name": "bd6c4108-38be-4510-9754-c0dddf829d79",
+            "db": "db",
+            "url": "mongodb://ee0447fe-4ea9-4f00-9358-8d81a570490d:ac58b099-bf51-466e-afcc-e5b570ec2066@23.246.199.78:10026/db"
+         }
+      }
+   ]

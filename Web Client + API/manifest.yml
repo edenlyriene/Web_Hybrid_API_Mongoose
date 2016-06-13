@@ -1,0 +1,18 @@
+applications:
+- path: .
+  memory: 384M
+  instances: 1
+  domain: mybluemix.net
+  name: suryasoenaryo
+  host: suryasoenaryo
+  disk_quota: 1024M
+  services:
+  - Text to Speech-vc
+  - Object Storage-sf
+  - mean-mongo
+  env:
+    NODE_ENV: cloud-foundry
+declared-services:
+  mean-mongo:
+    label: mongodb
+    plan: 100

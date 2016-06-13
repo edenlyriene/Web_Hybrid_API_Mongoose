@@ -1,0 +1,128 @@
+<!--create_account.html-->
+<div class="row">
+    <div class="col-md-12">
+        <div class="page-header">
+            <h2>Create An Account</h2>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-7 col-md-offset-2">
+        <form class="form-horizontal" novalidate ng-submit="submitForm()" name="createAccountForm">
+            <fieldset>
+
+                <div class="form-group" >
+                    <label for="inputUsername" class="col-lg-4 control-label">Username</label>
+                    <div class="col-lg-8" ng-class="{ 'has-error' : createAccountForm.inputUsername.$error.required && !createAccountForm.inputUsername.$pristine}">
+                        <input type="text"
+                               class="form-control"
+                               id="inputUsername"
+                               name="inputUsername"
+                               ng-model="newUser.username"
+                               required placeholder="Username">
+                        <span ng-show="createAccountForm.inputUsername.$error.required && !createAccountForm.inputUsername.$pristine" class="help-block">Your username is required.</span>
+                    </div>
+                </div>
+
+                <div class="form-group" ng-class="{ 'has-error' : createAccountForm.inputEmail.$error.required && !createAccountForm.inputEmail.$pristine || createAccountForm.inputEmail.$error.email}">
+                    <label for="inputEmail" class="col-lg-4 control-label">Email</label>
+                    <div class="col-lg-8">
+                        <input type="email"
+                               class="form-control"
+                               id="inputEmail"
+                               name="inputEmail"
+                               ng-model="newUser.email"
+                               required placeholder="Email">
+                        <span ng-show="createAccountForm.inputEmail.$error.required && !createAccountForm.inputEmail.$pristine" class="help-block">Your E-mail is required.</span>
+                        <span ng-show="createAccountForm.inputEmail.$error.email" class="help-block">Your E-mail is invalid.</span>
+                    </div>
+                </div>
+                
+                <div class="form-group" ng-class="{ 'has-error' : createAccountForm.inputPassword.$error.required && !createAccountForm.inputPassword.$pristine || createAccountForm.inputPassword.$error.minlength || createAccountForm.inputPassword.$error.maxlength || createAccountForm.inputPassword.$error.pattern}">
+                    <label for="inputPassword" class="col-lg-4 control-label">Password</label>
+                    <div class="col-lg-8">
+                        <input type="password"
+                               class="form-control"
+                               id="inputPassword"
+                               name="inputPassword"
+                               ng-model="newUser.password"
+                               required
+                               placeholder="Password">
+                    <span ng-show="createAccountForm.inputPassword.$error.required && !createAccountForm.inputPassword.$pristine" class="help-block">Password is required.</span>
+                    </div>
+                </div>
+
+                <div class="form-group" ng-class="{ 'has-error' : createAccountForm.confirmPassword.$error.required && !createAccountForm.confirmPassword.$pristine || createAccountForm.confirmPassword.$error.noMatch}">
+                    <label for="confirmPassword" class="col-lg-4 control-label">Confirm Password</label>
+                    <div class="col-lg-8">
+                        <input type="password"
+                               class="form-control"
+                               id="confirmPassword"
+                               name="confirmPassword"
+                               ng-model="newUser.confirmPassword"
+                               required
+                               placeholder="Password"
+                               compare-to="newUser.password">
+                        <span ng-show="createAccountForm.confirmPassword.$error.required && !createAccountForm.confirmPassword.$pristine" class="help-block">Confirmation password is required.</span>
+                        <span ng-show="createAccountForm.confirmPassword.$error.noMatch" class="help-block">Password doesn't match.</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="name"  class="col-lg-4 control-label">Name</label>
+                    <div class="col-lg-4" ng-class="{ 'has-error' : createAccountForm.name.$error.required && !createAccountForm.name.$pristine}">
+                        <input type="text"
+                               class="form-control"
+                               id="name"
+                               name="name"
+                               ng-model="newUser.name"
+                               required placeholder="First Name">
+                        <span ng-show="createAccountForm.name.$error.required && !createAccountForm.name.$pristine" class="help-block">Your first name is required.</span>
+                    </div>
+                    <div class="col-lg-4" ng-class="{ 'has-error' : createAccountForm.lastname.$error.required && !createAccountForm.lastname.$pristine}">
+                        <input type="text"
+                               class="form-control"
+                               id="lastname"
+                               name="lastname"
+                               ng-model="newUser.lastname"
+                               required placeholder="Last Name">
+                        <span ng-show="createAccountForm.lastname.$error.required && !createAccountForm.lastname.$pristine" class="help-block">Your last name is required.</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputName" class="col-lg-4 control-label">Gender</label>
+                    <div class="col-md-8">
+                        <div class="form-group row">
+                            <label class="sr-only" for="gender">Gender</label>
+                            <div class="col-md-6" style="padding-right: 5px">
+                                <label class="radio-inline" style="float:left">
+                                <input type="radio" 
+                                       name="inlineRadioOptions" 
+                                       id="inlineRadio1" 
+                                       value="Male" 
+                                       ng-model="newUser.gender">Male
+                                </label>
+                                <label class="radio-inline" style="float:left">
+                                <input type="radio" 
+                                       name="inlineRadioOptions" 
+                                       id="inlineRadio2" 
+                                       ng-model="newUser.gender"
+                                       value="Female">Female
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-9 col-lg-offset-3">
+                        <input class="btn btn-primary" type="submit" ng-disabled="createAccountForm.$invalid" value="Create Account">
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>
+
+<!--/create_account.html-->

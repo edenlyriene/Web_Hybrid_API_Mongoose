@@ -1,0 +1,21 @@
+<ion-view view-title="Post">
+  <ion-content>
+    <ion-list ng-if="!showMenu">
+        <p>{{message}}</p>
+    </ion-list>
+    <ion-list>
+          <ion-item class="item-thumbnail-left" ng-if="showMenu">
+            <img src="./img/umaru_2.jpg">
+            <h2>{{post.firstname}} {{post.lastname}}
+            <span style="font-size:75%">{{post.time | date:'MM/dd/yyyy @ h:mma'}}</span>
+            <p>{{post.text}}</p>
+
+            <ion-option-button class="button-assertive ion-edit"
+                href="#/app/post/{{post._id}}/edit">
+            </ion-option-button>
+
+          </ion-item>
+              
+    </ion-list>
+  </ion-content>
+</ion-view>

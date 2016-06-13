@@ -1,0 +1,56 @@
+<div class="row">
+ <!-- main col left --> 
+ <div class="col-sm-5">
+     <h3>Events</h1>
+     <div class="panel panel-default">
+        <div class="panel-thumbnail"><img src="./img/logo.png" class="img-responsive"></div>
+        <div class="panel-body">
+          <p class="lead">{{accountData.name}} {{accountData.lastname}}</p>
+          <p>{{ accountData.friend.length }} Friends, {{accountData.firstName}} Posts</p>
+
+          <p>
+            <img src="./img/umaru.jpg" width="28px" height="28px">
+            <span><i>{{accountData.status}}</i></span>
+          </p>
+        </div>
+      </div>
+</div>
+  <!-- main col right -->
+  <div class="col-sm-7">
+      <div class="well"> 
+            <form class="form-horizontal" role="form" ng-submit="doPosting()">
+              <h4>New event</h4>
+                <div class="form-group" style="padding:14px;">
+                  <label for="title" class="control-label">Title</label>
+                  <input class="form-control" placeholder="Update your status"  ng-model="postData.title">
+                  <label for="description" class="control-label">Description</label>
+                  <textarea class="form-control" placeholder="Update your status"  ng-model="postData.description"></textarea>
+                  <label for="location" class="control-label">Location</label>
+                  <input class="form-control" placeholder="Update your status"  ng-model="postData.location">
+                </div>
+
+                <button class="btn btn-primary pull-right" type="button" ng-click="doPosting()">Post</button>
+                <ul class="list-inline">
+                    <li><a href=""><i class="fa fa-map-marker"></i></a> Posted as : {{accountData.username}}</li>
+                </ul>
+          </form>
+      </div>
+
+      <h3 ng-if="!showMenu">{{message}}</h3>
+      <div class="panel panel-default" ng-repeat="post in posts | orderBy:'-time'" ng-if="showMenu">
+          <div class="panel-body">
+            <img src="./img/umaru_2.jpg" class="img-circle pull-left newsfeed_propic"> 
+            <div class="newsfeed_user_date">
+                <p>{{events.postedBy.firstname}} {{events.postedBy.lastname}}</p>
+                <p>{{events.time}}</p>
+            </div>
+
+            <div class="clearfix"></div>
+            <div class="post_text">
+              <p>Title : {{events.title}} | Location : {{events.title}}</p>
+              <p>{{events.description}}</p>
+            </div>
+          </div>
+      </div>
+  </div>
+</div>
